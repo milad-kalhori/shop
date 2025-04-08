@@ -3,7 +3,7 @@ import { productService } from '../services/productService'
 
 
 export const productController = {
-  async getAllproducts(req: Request, res: Response) {
+  async getAllProducts(req: Request, res: Response) {
     try {
       const products = await productService.getAllProducts()
       res.status(200).json({
@@ -20,7 +20,7 @@ export const productController = {
     }
   },
 
-  async createproduct(req: Request, res: Response) {
+  async createProduct(req: Request, res: Response) {
     try {
       const newproduct = await productService.createProduct(req.body);
       res.status(201).json({
@@ -37,7 +37,7 @@ export const productController = {
     }
   },
 
-  async getproduct(req: Request, res: Response) {
+  async getProduct(req: Request, res: Response) {
     try {
       const product = await productService.getProduct(req.params.id);
       if (!product) {
@@ -60,7 +60,7 @@ export const productController = {
     }
   },
 
-  async updateproduct(req: Request, res: Response) {
+  async updateProduct(req: Request, res: Response) {
     try {
       const updatedproduct = await productService.updateProduct(req.params.id, req.body);
       if (!updatedproduct) {
@@ -83,7 +83,7 @@ export const productController = {
     }
   },
 
-  async removeproduct(req: Request, res: Response) {
+  async removeProduct(req: Request, res: Response) {
     try {
       const deletedproduct = await productService.deleteProduct(req.params.id);
       if (!deletedproduct) {
